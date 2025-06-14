@@ -16,6 +16,110 @@
                 font-family: 'Cairo', sans-serif;
             }
 
+            @media (max-width: 1200px) {
+              #section2, #about {
+                padding: 30px 10%;
+                flex-direction: column;
+                gap: 20px;
+              }
+            }
+
+            @media (max-width: 900px) {
+              .logo-section {
+                padding: 30px 5px;
+              }
+              .logos-container img {
+                width: 120px;
+                height: 120px;
+                padding: 10px;
+              }
+              #features > div {
+                flex-direction: column;
+                gap: 20px;
+              }
+            }
+
+            @media (max-width: 768px) {
+              nav {
+                flex-direction: column;
+                padding: 10px 10px;
+                align-items: flex-start;
+              }
+              nav .logo {
+                margin-bottom: 10px;
+              }
+              #section2, #about {
+                flex-direction: column;
+                padding: 20px 2%;
+                gap: 20px;
+              }
+              .logo-section {
+                margin: 20px 5px;
+                padding: 20px 5px;
+              }
+              .logos-container {
+                gap: 10px;
+              }
+              .logos-container img {
+                width: 80px;
+                height: 80px;
+                padding: 5px;
+              }
+              #circles {
+                height: 300px;
+              }
+              .circle-main {
+                width: 110px;
+                height: 110px;
+              }
+              .circle-orbit {
+                width: 220px;
+                height: 220px;
+              }
+              .circle-img {
+                width: 60px;
+                height: 60px;
+                font-size: 0.7rem;
+              }
+              .section.logo-section h2 {
+                font-size: 1.2rem;
+              }
+              .background-img img, .background-imges {
+                margin-bottom: 30px;
+              }
+              #features > div {
+                flex-direction: column;
+                gap: 20px;
+              }
+            }
+
+            @media (max-width: 600px) {
+              .logo-section {
+                margin: 10px 2px;
+                padding: 10px 2px;
+              }
+              .logos-container img {
+                width: 60px;
+                height: 60px;
+                padding: 2px;
+              }
+              #places img, .small-gallery img {
+                width: 90px !important;
+                height: 60px !important;
+              }
+              .circle-row, .small-gallery {
+                gap: 5px;
+              }
+              footer {
+                flex-direction: column;
+                padding: 20px 2%;
+                font-size: 0.9rem;
+              }
+              footer img {
+                max-width: 180px;
+              }
+            }
+
             body {
                 background: #f4f8fb;
                 color: #222;
