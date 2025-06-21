@@ -1,0 +1,1326 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+  }
+
+
+
+
+  @media (max-width: 1200px) {
+
+    #section2,
+    #about {
+      padding: 30px 10%;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      padding: 10px 10px;
+      align-items: flex-start;
+    }
+
+    nav .logo {
+      margin-bottom: 10px;
+    }
+
+    #section2,
+    #about {
+      flex-direction: column;
+      padding: 20px 2%;
+      gap: 20px;
+    }
+
+    .logo-section {
+      margin: 20px 5px;
+      padding: 20px 5px;
+    }
+
+    .logos-container {
+      gap: 10px;
+    }
+
+    .logos-container img {
+      width: 80px;
+      height: 80px;
+      padding: 5px;
+    }
+
+    #circles {
+      height: 300px;
+    }
+
+    .circle-main {
+      width: 110px;
+      height: 110px;
+    }
+
+    .circle-orbit {
+      width: 220px;
+      height: 220px;
+    }
+
+    .circle-img {
+      width: 60px;
+      height: 60px;
+      font-size: 0.7rem;
+    }
+
+    .section.logo-section h2 {
+      font-size: 1.2rem;
+    }
+
+    .background-img img,
+    .background-imges {
+      margin-bottom: 30px;
+    }
+
+    #features>div {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .logo-section {
+      margin: 10px 2px;
+      padding: 10px 2px;
+    }
+
+    .logos-container img {
+      width: 60px;
+      height: 60px;
+      padding: 2px;
+    }
+
+    #places img,
+    .small-gallery img {
+      width: 90px !important;
+      height: 60px !important;
+    }
+
+    .circle-row,
+    .small-gallery {
+      gap: 5px;
+    }
+
+    footer {
+      flex-direction: column;
+      padding: 20px 2%;
+      font-size: 0.9rem;
+    }
+
+    footer img {
+      max-width: 180px;
+    }
+  }
+
+  body {
+    background: #f4f8fb;
+    color: #222;
+    scroll-behavior: smooth;
+
+  }
+
+  /* مثال على ميديا كويري مخصص */
+  @media (max-width: 1000px) {
+    body {
+      font-size: 0.98rem;
+    }
+
+    .full-width-image {
+      width: 90%;
+      height: auto;
+    }
+  }
+
+  @media all {
+    /* يمكنك إضافة قواعد CSS عامة هنا تطبق على جميع الوسائط */
+  }
+
+
+  a {
+    color: #065e9c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: #005fa3;
+  }
+
+  /* Navbar */
+  nav {
+    background: #fdfeff;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1e1af5;
+    /* ذهبي */
+    cursor: pointer;
+    user-select: none;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  nav ul li {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  nav ul li:hover {
+    color: #ff0000;
+  }
+
+  /* Responsive Navbar - small screens */
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+    }
+  }
+
+  /* ميديا كويري إضافية لشاشات صغيرة جداً */
+  @media (max-width: 400px) {
+    nav .logo {
+      font-size: 1.1rem;
+    }
+
+    .logo-section {
+      padding: 5px 1px;
+      margin: 5px 1px;
+    }
+
+    .logos-container img {
+      width: 22px;
+      height: 22px;
+      padding: 0;
+    }
+
+    #section2,
+    #about {
+      padding: 5px 0.5%;
+      gap: 5px;
+    }
+
+    .circle-main {
+      width: 40px;
+      height: 40px;
+    }
+
+    .circle-orbit {
+      width: 70px;
+      height: 70px;
+    }
+
+    .circle-img {
+      width: 15px;
+      height: 15px;
+      font-size: 0.3rem;
+    }
+
+    .small-gallery img {
+      width: 30px !important;
+      height: 20px !important;
+    }
+
+    footer {
+      font-size: 0.5rem;
+      padding: 5px 0.5%;
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    h1,
+    h2,
+    h3 {
+      font-size: 1.1rem !important;
+    }
+
+    .logos-container img {
+      width: 40px;
+      height: 40px;
+      padding: 1px;
+    }
+
+    #section2,
+    #about {
+      padding: 10px 1%;
+      gap: 10px;
+    }
+
+    .circle-main {
+      width: 70px;
+      height: 70px;
+    }
+
+    .circle-orbit {
+      width: 120px;
+      height: 120px;
+    }
+
+    .circle-img {
+      width: 30px;
+      height: 30px;
+      font-size: 0.5rem;
+    }
+
+    .small-gallery img {
+      width: 50px !important;
+      height: 35px !important;
+    }
+
+    footer {
+      font-size: 0.7rem;
+      padding: 10px 1%;
+    }
+  }
+
+  .logo-section {
+    text-align: center;
+    max-width: 1100px;
+    margin: 50px auto 30px;
+    padding: 50px;
+    background: #f9fbff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 64, 128, 0.1);
+  }
+
+  .logo-section h2 {
+    color: #d40000;
+    margin-bottom: 25px;
+    font-size: 2rem;
+  }
+
+  .logos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap
+  }
+
+  .logos-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    object-fit: contain;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    background: white;
+    padding: 30px;
+  }
+
+  .logos-container img:hover {
+    border-color: #d40000;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(212, 0, 0, 0.5);
+  }
+
+  .full-image {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: auto;
+  }
+
+  .full-width-image {
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .circle-row {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .circle-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .circle-imges {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgb(247, 4, 4);
+    transition: transform 0.3s ease;
+  }
+
+  .circle-imges:hover {
+    transform: scale(1.1);
+  }
+
+  .background-showcase {
+    padding: 20px;
+
+  }
+
+  .background-img img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    gap: 10px;
+
+  }
+
+
+  .background-imges {
+    width: 70%;
+    border-radius: 20px;
+    margin-bottom: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+
+  }
+
+  .small-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .small-gallery img {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .small-gallery img:hover {
+    transform: scale(1.05);
+  }
+
+
+  .country-box {
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    /* الشكل متساوي الأضلاع (octagon-like) */
+    background: #6317f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .country-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* صندوق الصورة الخلفية */
+  .country-bg-image {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=160&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .country-bg-images {
+    background-image: url('Picture13mmmm.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media (max-width: 700px) {
+    .country-box {
+      width: 70px;
+      height: 70px;
+    }
+
+    .country-name img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .country-name {
+      font-size: 0.8rem;
+      padding: 3px 4px;
+    }
+  }
+
+  .country-bg-imagee {
+    background-image: url('Picture12mm.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* صندوق اسم الدولة مع صورة صغيرة */
+  .country-name {
+    background-color: #fff;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px 8px;
+    font-weight: bold;
+    color: #222;
+  }
+
+  .country-name img {
+    width: 50px;
+    height: 50px;
+    border-radius: 15%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  #circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .circle-main {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgb(25, 0, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .circle-main img {
+    width: 100%;
+    height: 90%;
+  }
+
+  .circle-orbit {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateOrbit 20s linear infinite;
+    transform-origin: 50% 50%;
+  }
+
+  .circle-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0 0 20px rgb(0, 17, 255);
+    top: 50%;
+    left: 50%;
+    font-size: medium;
+    font-style: bold;
+    text-align: center;
+    color: #5a0202;
+  }
+
+  @media (max-width: 600px) {
+    .circle-main {
+      width: 80px;
+      height: 80px;
+    }
+
+    .circle-orbit {
+      width: 160px;
+      height: 160px;
+    }
+
+    .circle-img {
+      width: 40px;
+      height: 40px;
+      font-size: 0.6rem;
+    }
+  }
+
+  /* توزيع الدوائر بشكل دائري، وبدون تدويرها لأن الدوران على الـ orbit */
+  .circle-img:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(0deg) translate(190px) rotate(0deg);
+  }
+
+  .circle-img:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(72deg) translate(190px) rotate(-72deg);
+  }
+
+  .circle-img:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(144deg) translate(190px) rotate(-144deg);
+  }
+
+  .circle-img:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(216deg) translate(190px) rotate(-216deg);
+  }
+
+  .circle-img:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(288deg) translate(190px) rotate(-288deg);
+  }
+
+  @keyframes rotateOrbit {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  /* ====== Animation for fade-in effect on scroll ====== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.23, 1.01, .32, 1);
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* مثال: تحسين عرض الصور في المعرض على الشاشات الصغيرة */
+  @media (max-width: 500px) {
+    .small-gallery img {
+      width: 70px !important;
+      height: 45px !important;
+    }
+
+    .logos-container img {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+    }
+
+    .logo-section h2 {
+      font-size: 1rem;
+    }
+
+    .country-bg-image {
+      margin: 10px 2px;
+      padding: 10px 2px;
+    }
+
+    .circle-img:nth-child(1) {
+      margin: 10px 2px;
+      padding: 10px 2px;
+    }
+
+    .circle-img:nth-child(2) {
+      margin: 10px 2px;
+      padding: 10px 2px;
+    }
+
+    .circle-img:nth-child(3) {
+      margin: 10px 2px;
+      padding: 10px 2px;
+    }
+
+    .circle-img:nth-child(4) {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+    }
+
+    .circle-img:nth-child(5) {
+      margin: 10px 2px;
+      padding: 10px 2px;
+    }
+
+  }
+
+  @media (max-width: 900px) {
+    .logo-section {
+      padding: 30px 5px;
+    }
+
+    .logos-container img {
+      width: 120px;
+      height: 120px;
+      padding: 10px;
+    }
+
+    #features>div {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 900px) {
+
+    section[style*="padding: 60px 5%"] .flex-1,
+    section[style*="padding: 60px 5%"]>div {
+      flex-direction: column !important;
+      gap: 30px !important;
+    }
+
+    section[style*="padding: 60px 5%"] img {
+      max-width: 220px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    section[style*="padding: 60px 5%"]>div {
+      flex-direction: column !important;
+      gap: 15px !important;
+    }
+
+    section[style*="padding: 60px 5%"] img {
+      max-width: 140px !important;
+    }
+
+    section[style*="padding: 60px 5%"] [style*="width: 100px; height: 100px;"] {
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    section[style*="padding: 60px 5%"] h2 {
+      font-size: 1.1rem !important;
+    }
+  }
+
+  /* شاشة لابتوب وأقل */
+  @media (max-width: 1200px) {
+    body {
+      font-size: 0.98rem;
+    }
+
+    .logo-section {
+      padding: 40px 20px;
+    }
+
+    .logos-container img {
+      width: 160px;
+      height: 160px;
+    }
+
+    #section2,
+    #about {
+      padding: 30px 5%;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  /* شاشة تابلت */
+  @media (max-width: 900px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+    }
+
+    nav .logo {
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      display: none;
+    }
+
+    .logos-container img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .circle-main {
+      width: 120px;
+      height: 120px;
+    }
+
+    .circle-orbit {
+      width: 250px;
+      height: 250px;
+    }
+
+    .circle-img {
+      width: 60px;
+      height: 60px;
+      font-size: 0.7rem;
+    }
+
+    footer {
+      flex-direction: column;
+      font-size: 0.85rem;
+      padding: 15px 2%;
+    }
+  }
+
+  /* شاشة موبايل */
+  @media (max-width: 600px) {
+    body {
+      font-size: 0.9rem;
+    }
+
+    .logo-section {
+      padding: 20px 10px;
+    }
+
+    /* ====== Media Queries لمشروعك ====== */
+
+    /* شاشة ديسكتوب كبيرة */
+    @media (max-width: 1200px) {
+      body {
+        font-size: 0.98rem;
+      }
+
+      .logo-section {
+        padding: 40px 20px;
+      }
+
+      .logos-container img {
+        width: 160px;
+        height: 160px;
+      }
+
+      #section2,
+      #about {
+        padding: 30px 5%;
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+
+    /* شاشة لابتوب / تابلت كبيرة */
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+      }
+
+      nav .logo {
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .logos-container img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .circle-main {
+        width: 120px;
+        height: 120px;
+      }
+
+      .circle-orbit {
+        width: 250px;
+        height: 250px;
+      }
+
+      .circle-img {
+        width: 60px;
+        height: 60px;
+        font-size: 0.7rem;
+      }
+
+      footer {
+        flex-direction: column;
+        font-size: 0.85rem;
+        padding: 15px 2%;
+      }
+
+      #features>div {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      section[style*="padding: 60px 5%"] .flex-1,
+      section[style*="padding: 60px 5%"]>div {
+        flex-direction: column !important;
+        gap: 30px !important;
+      }
+
+      section[style*="padding: 60px 5%"] img {
+        max-width: 220px !important;
+      }
+    }
+
+    /* شاشة تابلت متوسطة */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 10px 10px;
+        align-items: flex-start;
+      }
+
+      nav .logo {
+        margin-bottom: 10px;
+      }
+
+      #section2,
+      #about {
+        flex-direction: column;
+        padding: 20px 2%;
+        gap: 20px;
+      }
+
+      .logo-section {
+        margin: 20px 5px;
+        padding: 20px 5px;
+      }
+
+      .logos-container {
+        gap: 10px;
+      }
+
+      .logos-container img {
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+      }
+
+      #circles {
+        height: 300px;
+      }
+
+      .circle-main {
+        width: 110px;
+        height: 110px;
+      }
+
+      .circle-orbit {
+        width: 220px;
+        height: 220px;
+      }
+
+      .circle-img {
+        width: 60px;
+        height: 60px;
+        font-size: 0.7rem;
+      }
+
+      .section.logo-section h2 {
+        font-size: 1.2rem;
+      }
+
+      .background-img img,
+      .background-imges {
+        margin-bottom: 30px;
+      }
+
+      #features>div {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    /* شاشة موبايل كبيرة */
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9rem;
+      }
+
+      .logo-section {
+        margin: 10px 2px;
+        padding: 10px 2px;
+      }
+
+      .logos-container img {
+        width: 60px;
+        height: 60px;
+        padding: 2px;
+      }
+
+      #places img,
+      .small-gallery img {
+        width: 90px !important;
+        height: 60px !important;
+      }
+
+      .circle-main {
+        width: 80px;
+        height: 80px;
+      }
+
+      .circle-orbit {
+        width: 160px;
+        height: 160px;
+      }
+
+      .circle-img {
+        width: 40px;
+        height: 40px;
+        font-size: 0.5rem;
+      }
+
+      .background-img img,
+      .background-imges {
+        margin-bottom: 20px;
+      }
+
+      .small-gallery img {
+        width: 70px !important;
+        height: 50px !important;
+      }
+
+      footer img {
+        max-width: 150px;
+      }
+
+      footer {
+        flex-direction: column;
+        padding: 20px 2%;
+        font-size: 0.9rem;
+      }
+
+      footer img {
+        max-width: 180px;
+      }
+
+      section[style*="padding: 60px 5%"]>div {
+        flex-direction: column !important;
+        gap: 15px !important;
+      }
+
+      section[style*="padding: 60px 5%"] img {
+        max-width: 140px !important;
+      }
+
+      section[style*="padding: 60px 5%"] [style*="width: 100px; height: 100px;"] {
+        width: 60px !important;
+        height: 60px !important;
+      }
+
+      section[style*="padding: 60px 5%"] h2 {
+        font-size: 1.1rem !important;
+      }
+    }
+
+    /* شاشة موبايل متوسطة - 480px */
+    @media (max-width: 480px) {
+
+      h1,
+      h2,
+      h3 {
+        font-size: 1.1rem !important;
+      }
+
+      .logos-container img {
+        width: 40px;
+        height: 40px;
+        padding: 1px;
+      }
+
+      #section2,
+      #about {
+        padding: 10px 1%;
+        gap: 10px;
+      }
+
+      .circle-main {
+        width: 70px;
+        height: 70px;
+      }
+
+      .circle-orbit {
+        width: 120px;
+        height: 120px;
+      }
+
+      .circle-img {
+        width: 30px;
+        height: 30px;
+        font-size: 0.5rem;
+      }
+
+      .small-gallery img {
+        width: 50px !important;
+        height: 35px !important;
+      }
+
+      footer {
+        font-size: 0.7rem;
+        padding: 10px 1%;
+      }
+    }
+
+    /* شاشة موبايل صغيرة جداً - 400px */
+    @media (max-width: 400px) {
+      nav .logo {
+        font-size: 1rem;
+      }
+
+      .logos-container img {
+        width: 50px;
+        height: 50px;
+        padding: 2px;
+      }
+
+      .circle-main {
+        width: 60px;
+        height: 60px;
+      }
+
+      .circle-orbit {
+        width: 120px;
+        height: 120px;
+      }
+
+      .circle-img {
+        width: 30px;
+        height: 30px;
+        font-size: 0.4rem;
+      }
+
+      .small-gallery img {
+        width: 50px !important;
+        height: 35px !important;
+      }
+
+      .logo-section h2 {
+        font-size: 1.1rem;
+      }
+
+      footer {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* إضافات خاصة بالدوائر */
+    @media (max-width: 600px) {
+      .circle-main {
+        width: 80px;
+        height: 80px;
+      }
+
+      .circle-orbit {
+        width: 160px;
+        height: 160px;
+      }
+
+      .circle-img {
+        width: 40px;
+        height: 40px;
+        font-size: 0.6rem;
+      }
+    }
+
+    /* تعديلات متفرقة لشاشات صغيرة */
+    @media (max-width: 500px) {
+      .small-gallery img {
+        width: 70px !important;
+        height: 45px !important;
+      }
+
+      .logos-container img {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+      }
+
+      .logo-section h2 {
+        font-size: 1rem;
+      }
+
+      .country-bg-image {
+        margin: 10px 2px;
+        padding: 10px 2px;
+      }
+
+      .circle-img:nth-child(1),
+      .circle-img:nth-child(2),
+      .circle-img:nth-child(3),
+      .circle-img:nth-child(5) {
+        margin: 10px 2px;
+        padding: 10px 2px;
+      }
+
+      .circle-img:nth-child(4) {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+      }
+    }
+
+    .circle-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: absolute;
+      box-shadow: 0 0 20px rgb(0, 17, 255);
+      top: 50%;
+      left: 50%;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #5a0202;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      /* لمنع تدوير النص مع الدائرة */
+      transform-origin: center;
+    }
+
+    /* توزيع الدوائر بشكل دائري، مع عكس التدوير للحفاظ على استقامة النص */
+    .circle-img:nth-child(1) {
+      transform: translate(-50%, -50%) rotate(0deg) translate(190px) rotate(0deg);
+    }
+
+    .circle-img:nth-child(2) {
+      transform: translate(-50%, -50%) rotate(72deg) translate(190px) rotate(-72deg);
+    }
+
+    .circle-img:nth-child(3) {
+      transform: translate(-50%, -50%) rotate(144deg) translate(190px) rotate(-144deg);
+    }
+
+    .circle-img:nth-child(4) {
+      transform: translate(-50%, -50%) rotate(216deg) translate(190px) rotate(-216deg);
+    }
+
+    .circle-img:nth-child(5) {
+      transform: translate(-50%, -50%) rotate(288deg) translate(190px) rotate(-288deg);
+    }
+
+    /* مقاسات أصغر للهواتف */
+    @media (max-width: 600px) {
+      .circle-img {
+        width: 40px;
+        height: 40px;
+        font-size: 0.6rem;
+      }
+    }
+
+    .logos-container img {
+      width: 80px;
+      height: 80px;
+      padding: 5px;
+    }
+
+    .circle-main {
+      width: 80px;
+      height: 80px;
+    }
+
+    .circle-orbit {
+      width: 160px;
+      height: 160px;
+    }
+
+    .circle-img {
+      width: 40px;
+      height: 40px;
+      font-size: 0.5rem;
+    }
+
+    .background-img img,
+    .background-imges {
+      margin-bottom: 20px;
+    }
+
+    .small-gallery img {
+      width: 70px !important;
+      height: 50px !important;
+    }
+    .circle-img h1 {
+      font-size: 0.7rem;
+      margin: 0;
+      padding: 0;
+      line-height: 1.1;
+      font-weight: bold;
+      color: #5a0202;
+    }
+    .circle-img h1 {
+      font-size: 0.7rem;
+      margin: 0;
+      padding: 0;
+      line-height: 1.1;
+      font-weight: bold;
+      color: #5a0202;
+      direction: rtl;
+      text-align: center;
+      width: 100%;
+    }
+
+    footer img {
+      max-width: 150px;
+    }
+  }
+
+  /* شاشة موبايل صغيرة جداً */
+  @media (max-width: 400px) {
+    nav .logo {
+      font-size: 1rem;
+    }
+
+    .logos-container img {
+      width: 50px;
+      height: 50px;
+      padding: 2px;
+    }
+
+    .circle-main {
+      width: 60px;
+      height: 60px;
+    }
+
+    .circle-orbit {
+      width: 120px;
+      height: 120px;
+    }
+
+    .circle-img {
+      width: 30px;
+      height: 30px;
+      font-size: 0.4rem;
+    }
+
+    .small-gallery img {
+      width: 50px !important;
+      height: 35px !important;
+    }
+
+    .logo-section h2 {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      font-size: 0.7rem;
+    }
+  }

@@ -1,798 +1,503 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>شركة سياحة احترافية</title>
-        <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <style>
-            /* Reset */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Cairo', sans-serif;
-            }
-
-            @media (max-width: 1200px) {
-              #section2, #about {
-                padding: 30px 10%;
-                flex-direction: column;
-                gap: 20px;
-              }
-            }
-
-            @media (max-width: 900px) {
-              .logo-section {
-                padding: 30px 5px;
-              }
-              .logos-container img {
-                width: 120px;
-                height: 120px;
-                padding: 10px;
-              }
-              #features > div {
-                flex-direction: column;
-                gap: 20px;
-              }
-            }
-
-            @media (max-width: 768px) {
-              nav {
-                flex-direction: column;
-                padding: 10px 10px;
-                align-items: flex-start;
-              }
-              nav .logo {
-                margin-bottom: 10px;
-              }
-              #section2, #about {
-                flex-direction: column;
-                padding: 20px 2%;
-                gap: 20px;
-              }
-              .logo-section {
-                margin: 20px 5px;
-                padding: 20px 5px;
-              }
-              .logos-container {
-                gap: 10px;
-              }
-              .logos-container img {
-                width: 80px;
-                height: 80px;
-                padding: 5px;
-              }
-              #circles {
-                height: 300px;
-              }
-              .circle-main {
-                width: 110px;
-                height: 110px;
-              }
-              .circle-orbit {
-                width: 220px;
-                height: 220px;
-              }
-              .circle-img {
-                width: 60px;
-                height: 60px;
-                font-size: 0.7rem;
-              }
-              .section.logo-section h2 {
-                font-size: 1.2rem;
-              }
-              .background-img img, .background-imges {
-                margin-bottom: 30px;
-              }
-              #features > div {
-                flex-direction: column;
-                gap: 20px;
-              }
-            }
-
-            @media (max-width: 600px) {
-              .logo-section {
-                margin: 10px 2px;
-                padding: 10px 2px;
-              }
-              .logos-container img {
-                width: 60px;
-                height: 60px;
-                padding: 2px;
-              }
-              #places img, .small-gallery img {
-                width: 90px !important;
-                height: 60px !important;
-              }
-              .circle-row, .small-gallery {
-                gap: 5px;
-              }
-              footer {
-                flex-direction: column;
-                padding: 20px 2%;
-                font-size: 0.9rem;
-              }
-              footer img {
-                max-width: 180px;
-              }
-            }
-
-            body {
-                background: #f4f8fb;
-                color: #222;
-                scroll-behavior: smooth;
-                
-            }
-
-            a {
-                color: #065e9c;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-
-            a:hover {
-                color: #005fa3;
-            }
-
-            /* Navbar */
-            nav {
-                background: #fdfeff;
-                color: #fff;
-                padding: 15px 30px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: sticky;
-                top: 0;
-                z-index: 9999;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-            }
-
-            nav .logo {
-                font-size: 1.8rem;
-                font-weight: 700;
-                letter-spacing: 2px;
-                color: #1e1af5;
-                /* ذهبي */
-                cursor: pointer;
-                user-select: none;
-            }
-
-            nav ul {
-                list-style: none;
-                display: flex;
-                gap: 25px;
-            }
-
-            nav ul li {
-                font-size: 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                user-select: none;
-            }
-
-            nav ul li:hover {
-                color: #ff0000;
-            }
-
-            /* Responsive Navbar - small screens */
-            @media (max-width: 768px) {
-                nav ul {
-                    display: none;
-                }
-            }
-            .logo-section {
-                text-align: center;
-                max-width: 1100px;
-                margin: 50px auto 30px;
-                padding: 50px;
-                background: #f9fbff;
-                border-radius: 15px;
-                box-shadow: 0 8px 20px rgba(0, 64, 128, 0.1);
-              }
-            
-              .logo-section h2 {
-                color: #d40000;
-                margin-bottom: 25px;
-                font-size: 2rem;
-              }
-            
-              .logos-container {
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                flex-wrap: wrap
-              }
-            
-              .logos-container img {
-                width: 200px;
-                height: 200px;
-                border-radius: 10%;
-                object-fit: contain;
-                border: 2px solid transparent;
-                transition: border-color 0.3s ease, transform 0.3s ease;
-                cursor: pointer;
-                background: white;
-                padding: 30px;
-              }
-            
-              .logos-container img:hover {
-                border-color: #d40000;
-                transform: scale(1.1);
-                box-shadow: 0 6px 15px rgba(212, 0, 0, 0.5);
-              }
-              .full-image {
-                width: 100%;
-                overflow: hidden;
-                margin-bottom: auto;
-              }
-              
-              .full-width-image {
-                width: 50%;
-                height: 50%;
-                border-radius: 20px;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-              }
-
-              .circle-row{
-                padding: 40px 20px;
-                text-align: center;
-              }
-              
-              .circle-row {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-              }
-              
-              .circle-imges {
-                width: 150px;
-                height: 150px;
-                object-fit: cover;
-                border-radius: 50%;
-                box-shadow: 0 4px 15px rgb(247, 4, 4);
-                transition: transform 0.3s ease;
-              }
-              
-              .circle-imges:hover {
-                transform: scale(1.1);
-              }
-
-              .background-showcase {
-                padding: 20px ;
-
-              }
-              
-              .background-img img {
-                width: 100%;
-                border-radius: 20px;
-                margin-bottom: 100px;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-                gap: 10px;
-
-              }
-              
-
-              .background-imges {
-                width: 70%;
-                border-radius: 20px;
-                margin-bottom: 100%;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-                
-
-              }
-              
-              .small-gallery {
-                display: flex;
-                gap: 10px;
-                justify-content: center;
-                flex-wrap: wrap;
-              }
-              
-              .small-gallery img {
-                width: 200px;
-                height: 140px;
-                object-fit: cover;
-                border-radius: 15px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease;
-              }
-              
-              .small-gallery img:hover {
-                transform: scale(1.05);
-              }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>شركة سياحة احترافية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-             .country-box {
-                width: 100px;
-                height: 100px;
-                clip-path: polygon(
-                  30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%
-                );
-                /* الشكل متساوي الأضلاع (octagon-like) */
-                background: #6317f0;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                cursor: pointer;
-                transition: transform 0.3s ease;
-              }
-              .country-box:hover {
-                transform: scale(1.1);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-              }
-            
-              /* صندوق الصورة الخلفية */
-              .country-bg-image {
-                background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=160&q=80');
-                background-size: cover;
-                background-position: center;
-              }
+</head>
+<style>
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    nav ul li a {
+      font-size: 1.2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+    }
+
+    nav {
+      padding: 10px 0;
+    }
+
+  }
+
+  @media (max-width: 600px) {
+
+    #section2,
+    #about {
+      flex-direction: column;
+      padding: 30px 5%;
+      gap: 20px;
+    }
+
+    #about img,
+    #section2 img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    #hero h1 {
+      font-size: 2.5rem;
+    }
+
+    #hero p {
+      font-size: 1.1rem;
+    }
+
+    #message {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 5%;
+      gap: 30px;
+    }
+
+    #message img {
+      margin-bottom: 20px;
+      width: 140px;
+      height: 140px;
+    }
+  }
+</style>
+
+<body>
+  <!-- لا شيء هنا، يمكنك إضافة محتوى إضافي إذا رغبت -->
+  <nav>
+    <div class="logo">سونستا للسياحة</div>
+    <ul>
+      <li><a href="#hero">الرئيسية</a></li>
+      <li><a href="#section2">خدماتنا</a></li>
+      <li><a href="#about">عن الشركة</a></li>
+      <li><a href="#message">رسالة المدير</a></li>
+      <li><a href="#circles">مميزاتنا</a></li>
+      <li><a href="#gallery">معرض الصور</a></li>
+      <li><a href="#partners">شركاء السفر</a></li>
+      <li><a href="#destinations">الوجهات</a></li>
+      <li><a href="#visa">خدمات الفيزا</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+  </nav>
+  <section id="hero" style="position:sticky;  height: 100vh;  background: url('Picture1.jpg') no-repeat center/cover;">
+    <div
+      style="position:absolute; inset:0;  display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#FFD700; padding: 0 20px;">
+      <h1 style="font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">
+        اكتشف أجمل الوجهات مع شركتنا</h1>
+      <p
+        style="font-size: 1.3rem; font-weight: 600; max-width: 700px; line-height: 1.5; text-shadow: 1px 1px 8px rgba(0,0,0,0.5);">
+        رحلات سياحية فريدة، خدمات متميزة وتجربة لا تنسى</p>
+    </div>
+  </section>
+
+  <section id="section2" style="display:flex; align-items:center; gap:40px; padding: 30px 30%; ">
+    <div style="flex:1;">
+      <img src="Picture3.jpg" alt="خدمات سياحية"
+        style="width:100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);  ">
+    </div>
+    <div style="flex:1; color:#003366; font-size: 1rem;">
+      <h2 style="text-align:center; font-weight: 400; margin-bottom: 20px; color: #0077cc;">خدماتنا المميزة</h2>
+      <p style="line-height: 1.7;">نقدم مجموعة متكاملة من الخدمات السياحية التي تلبي كل احتياجاتك، من حجوزات الفنادق
+        والطيران إلى الجولات السياحية المخصصة.</p>
+      <p style="line-height: 1.7; margin-top: 12px;">فريقنا المحترف يعمل باستمرار لضمان تجربة سفر سلسة وممتعة لجميع
+        عملائنا.</p>
+    </div>
+  </section>
 
 
-              .country-bg-images {
-                background-image: url('Picture13mmmm.png');
-                background-size: cover;
-                background-position: center;
-              }
-
-              .country-bg-imagee {
-                background-image: url('Picture12mm.png');
-                background-size: cover;
-                background-position: center;
-              }
-            
-              /* صندوق اسم الدولة مع صورة صغيرة */
-              .country-name {
-                background-color: #fff;
-                flex-direction: column;
-                text-align: center;
-                padding: 5px 8px;
-                font-weight: bold;
-                color: #222;
-              }
-              .country-name img {
-                width: 50px;
-                height: 50px;
-                border-radius: 15%;
-                object-fit: cover;
-                margin-bottom: 8px;
-                box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-              }    
-               #circles {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-          
-            .circle-main {
-              width: 180px;
-              height: 180px;
-              border-radius: 50%;
-              overflow: hidden;
-              box-shadow: 0 0 10px rgb(25, 0, 255);
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-            }
-          
-            .circle-main img {
-              width: 100%;
-              height: 90%;
-            }
-          
-            .circle-orbit {
-                position: absolute;
-                width: 380px;
-                height: 380px;
-                border-radius: 50%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                animation: rotateOrbit 20s linear infinite;
-                transform-origin: 50% 50%;
-              }
-              
-              .circle-img  {
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                overflow: hidden;
-                position: absolute;
-                box-shadow: 0 0 20px rgb(0, 17, 255);
-                top: 50%;
-                left: 50%;
-                font-size: medium;
-                font-style: bold;
-                text-align: center; 
-                color: #5a0202;
-              }
-              
-              /* توزيع الدوائر بشكل دائري، وبدون تدويرها لأن الدوران على الـ orbit */
-              .circle-img:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translate(190px) rotate(0deg); }
-              .circle-img:nth-child(2) { transform: translate(-50%, -50%) rotate(72deg) translate(190px) rotate(-72deg); }
-              .circle-img:nth-child(3) { transform: translate(-50%, -50%) rotate(144deg) translate(190px) rotate(-144deg); }
-              .circle-img:nth-child(4) { transform: translate(-50%, -50%) rotate(216deg) translate(190px) rotate(-216deg); }
-              .circle-img:nth-child(5) { transform: translate(-50%, -50%) rotate(288deg) translate(190px) rotate(-288deg); }
-              
-              @keyframes rotateOrbit {
-                from { transform: translate(-50%, -50%) rotate(0deg); }
-                to { transform: translate(-50%, -50%) rotate(360deg); }
-              }
-              /* ====== Animation for fade-in effect on scroll ====== */
-              .fade-in {
-                opacity: 0;
-                transform: translateY(40px);
-                transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.23,1.01,.32,1);
-              }
-
-              .fade-in.visible {
-                opacity: 1;
-                transform: translateY(0);
-              }
-               
-        </style>
-    </head>
-
-    <body>
-
-        <nav>
-            <div class="logo">سونستا للسياحة</div>
-            <ul>
-                <li><a href="#hero">الرئيسية</a></li>
-                <li><a href="#section2">خدماتنا</a></li>
-                <li><a href="#about">عن الشركة</a></li>
-                <li><a href="#message">رسالة المدير</a></li>
-                <li><a href="#circles">مميزاتنا</a></li>
-                <li><a href="#gallery">معرض الصور</a></li>
-                <li><a href="#partners">شركاء السفر</a></li>
-                <li><a href="#destinations">الوجهات</a></li>
-                <li><a href="#visa">خدمات الفيزا</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-        </nav>
-        <section id="hero"
-            style="position:sticky;  height: 100vh;  background: url('Picture1.jpg') no-repeat center/cover;">
-            <div
-                style="position:absolute; inset:0;  display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:#FFD700; padding: 0 20px;">
-                <h1
-                    style="font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">
-                    اكتشف أجمل الوجهات مع شركتنا</h1>
-                <p
-                    style="font-size: 1.3rem; font-weight: 600; max-width: 700px; line-height: 1.5; text-shadow: 1px 1px 8px rgba(0,0,0,0.5);">
-                    رحلات سياحية فريدة، خدمات متميزة وتجربة لا تنسى</p>
-            </div>
-        </section>
-
-        <section id="section2" style="display:flex; align-items:center; gap:40px; padding: 30px 30%; ">
-            <div style="flex:1;">
-                <img src="Picture3.jpg"
-                    alt="خدمات سياحية"
-                    style="width:100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);  ">
-            </div>
-            <div style="flex:1; color:#003366; font-size: 1rem;">
-                <h2 style="text-align:center; font-weight: 400; margin-bottom: 20px; color: #0077cc;">خدماتنا المميزة</h2>
-                <p style="line-height: 1.7;">نقدم مجموعة متكاملة من الخدمات السياحية التي تلبي كل احتياجاتك، من حجوزات الفنادق
-                    والطيران إلى الجولات السياحية المخصصة.</p>
-                <p style="line-height: 1.7; margin-top: 12px;">فريقنا المحترف يعمل باستمرار لضمان تجربة سفر سلسة وممتعة لجميع
-                    عملائنا.</p>
-            </div>
-        </section>
+  <section id="about" style="display:flex; align-items:center; gap:40px; padding: 30px 30%; background: #e9f0f8;">
+    <div style="flex:1; color:#003366; font-size: 1rem;">
+      <h2 style="text-align:center; font-weight: 400; margin-bottom: 20px; color: #0077cc;">عن شركتنا</h2>
+      <p style="line-height: 1.7;">نحن شركة سياحة رائدة ذات سمعة عالمية، نضع راحة وسعادة العميل في المقام الأول ونوفر
+        أفضل الحلول السياحية المبتكرة.</p>
+      <p style="line-height: 1.7; margin-top: 12px;">تجربتنا الطويلة وعلاقاتنا القوية مع شركائنا تتيح لنا تقديم عروض
+        تنافسية وخدمات عالية الجودة.</p>
+    </div>
+    <div style="flex:1;">
+      <img src="Picture4.jpg " عن الشركة
+        style="width:100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); object-fit: cover;">
+    </div>
+  </section>
 
 
-        <section id="about" style="display:flex; align-items:center; gap:40px; padding: 30px 30%; background: #e9f0f8;">
-            <div style="flex:1; color:#003366; font-size: 1rem;">
-              <h2 style="text-align:center; font-weight: 400; margin-bottom: 20px; color: #0077cc;">عن شركتنا</h2>
-              <p style="line-height: 1.7;">نحن شركة سياحة رائدة ذات سمعة عالمية، نضع راحة وسعادة العميل في المقام الأول ونوفر أفضل الحلول السياحية المبتكرة.</p>
-              <p style="line-height: 1.7; margin-top: 12px;">تجربتنا الطويلة وعلاقاتنا القوية مع شركائنا تتيح لنا تقديم عروض تنافسية وخدمات عالية الجودة.</p>
-            </div>
-            <div style="flex:1;">
-              <img src="Picture4.jpg " عن الشركة style="width:100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); object-fit: cover;">
-            </div>
-          </section>
+  <section id="message"
+    style="background:#001f3f; color:#fff; padding: 50px 10%; display:flex; align-items:center; gap:50px;">
+    <img src="Picture5.jpg" alt="مدير الشركة"
+      style="   width:200px; height:200px; border-radius:50%; box-shadow: 0 10px 15px rgba(255, 0, 0, 0.5); object-fit: cover;">
+    <div style="flex:1;">
+      <h3 style="   font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; color:#d40000">CEO’S Message</h3>
+      <p style="font-size: 1.1rem; line-height: 1.8;">بالعودة إلى الماضي عندما بدأت هذا العمل ، يسعدني أن أشهد التقدم
+        السريع والمجد الذي وصلنا له. لقد وصلنا في وقت قصير من
+        خلال خدمات عالية الجودة والتفاني إلى حد يمكننا أن نشعر فيه بمستقبل واعد للغاية.
+
+        رحلتنا من بداية محلية إلى خدمات سفر محلية ودولية كاملة لم تكن نزهة في الحديقة.إخلاصنا وتفاني موظفينا والأهم من
+        ذلك الثقة
+        والتقدير من عملائنا هو سر نجاحنا ومجدنا.
+
+        بغض النظر عن نوع الخدمة على سبيل المثال التخطيط لقضاء الإجازة ، وحجز التذاكر ، وحجز الفنادق ، أو النقل ، يتواجد
+        موظفونا
+        دائمًا لخدمة اهتماماتك في أفضل الاحتياجات الممكنة. نحن نضمن أن يكون سفرك خاليًا من المتاعب ومريحًا ، وحتى عندما
+        تكون في
+        الخارج ، فنحن جاهزون لتجهيزك على أقصى تقدير.أود أن أشكرك مقدمًا إذا كان بإمكانك التسجيل للحصول على خدماتنا في
+        Sonesta
+        Tours وتوضيح أنك هنا في جزء من رحلة وجولات احترافية تتوق إلى إنشاء علاقة عمل طويلة الأمد معك هنا
+      </p>
+    </div>
+    <style>
+      @media (max-width: 900px) {
+        #message {
+          flex-direction: column;
+          text-align: center;
+          padding: 40px 5%;
+          gap: 30px;
+        }
+
+        #message img {
+          margin-bottom: 20px;
+          width: 140px;
+          height: 140px;
+        }
+      }
+      #message h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      #message p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #f0f0f0;
+      }
+      #message {
+        background: #001f3f;
+        color: #fff;
+        padding: 50px 10%;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+      #message img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 10px 15px rgba(255, 0, 0, 0.5);
+        object-fit: cover;
+      }
+      #message div {
+        flex: 1;
+      }
+      #message h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: #d40000;
+      }
+      #message p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+      
+    </style>
+  </section>
 
 
-        <section id="message"
-            style="background:#001f3f; color:#fff; padding: 50px 10%; display:flex; align-items:center; gap:50px;">
-            <img src="Picture5.jpg" alt="مدير الشركة"
-                style="   width:200px; height:200px; border-radius:50%; box-shadow: 0 10px 15px rgba(255, 0, 0, 0.5); object-fit: cover;">
-            <div style="flex:1;">
-                <h3 style="   font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; color:#d40000">CEO’S Message</h3>
-                <p style="font-size: 1.1rem; line-height: 1.8;">بالعودة إلى الماضي عندما بدأت هذا العمل ، يسعدني أن أشهد التقدم السريع والمجد الذي وصلنا له. لقد وصلنا في وقت قصير من
-                خلال خدمات عالية الجودة والتفاني إلى حد يمكننا أن نشعر فيه بمستقبل واعد للغاية.
-                
-                رحلتنا من بداية محلية إلى خدمات سفر محلية ودولية كاملة لم تكن نزهة في الحديقة.إخلاصنا وتفاني موظفينا والأهم من ذلك الثقة
-                والتقدير من عملائنا هو سر نجاحنا ومجدنا.
-                
-                بغض النظر عن نوع الخدمة على سبيل المثال التخطيط لقضاء الإجازة ، وحجز التذاكر ، وحجز الفنادق ، أو النقل ، يتواجد موظفونا
-                دائمًا لخدمة اهتماماتك في أفضل الاحتياجات الممكنة. نحن نضمن أن يكون سفرك خاليًا من المتاعب ومريحًا ، وحتى عندما تكون في
-                الخارج ، فنحن جاهزون لتجهيزك على أقصى تقدير.أود أن أشكرك مقدمًا إذا كان بإمكانك التسجيل للحصول على خدماتنا في Sonesta
-                Tours وتوضيح أنك هنا في جزء من رحلة وجولات احترافية تتوق إلى إنشاء علاقة عمل طويلة الأمد معك هنا
-                    </p>
-            </div>
-        </section>
+  <section id="circles" style="position: relative; height: 400px; margin: 70px 10% 70px 10%;">
 
+    <!-- الدائرة المركزية -->
+    <div class="circle-main">
+      <img src="Picture23333.jpg" alt="مميزاتنا الرئيسية" />
+    </div>
 
-        <section id="circles" style="position: relative; height: 400px; margin: 70px 10% 70px 10%;">
+    <!-- دوائر صغيرة حولها -->
+    <div class="circle-orbit">
+      <div class="circle-img">
+        <h1>سياحة داخلية</h1>
+      </div>
+      <div class="circle-img">
+        <h1>سياحة خارجية</h1>
+      </div>
+      <div class="circle-img">
+        <h1>حجز فنادق</h1>
+      </div>
+      <div class="circle-img">
+        <h1>حج و عمره</h1>
+      </div>
+      <div class="circle-img">
+        <h1>تذاكر طيران</h1>
+      </div>
+    </div>
 
-            <!-- الدائرة المركزية -->
-            <div class="circle-main">
-              <img src="Picture23333.jpg" alt="مميزاتنا الرئيسية" />
-            </div>
-          
-            <!-- دوائر صغيرة حولها -->
-            <div class="circle-orbit">
-              <div class="circle-img"><h1>سياحة داخلية</h1></div>
-              <div class="circle-img"><h1>سياحة خارجية</h1>
-            </div>
-              <div class="circle-img"><h1>حجز فنادق</h1>
-            </div>
-              <div class="circle-img"><h1>حج و عمره</h1>
-            </div>
-              <div class="circle-img"><h1>تذاكر طيران</h1>
-            </div>
-            </div>
-          
-          </section>
-    
-        <section class="section logo-section" aria-label="شعارات شركات الطيران">
-            <h2>TRAVEL THE WORLD WITH US
-            </h2>
-            <div class="logos-container">
-                <img src="Picture0.png" alt="شركة الطيران 1" />
-                <img src="Picture00.png" alt="شركة الطيران 2" />
-                <img src="Picture000.png" alt="شركة الطيران 3" />
-                <img src="Picture mea.jpg" alt="شركة الطيران 4" />
-                <img src="Picture q.png" alt="شركة الطيران 5" />
-                <img src="Picture s.png" alt="شركة الطيران 5" />
-                <img src="Picture.png" alt="شركة الطيران 5" />
-                <img src="Picture0k.png" alt="شركة الطيران 5" />
-                <img src="PictureE.png" alt="شركة الطيران 5" />
-                <img src="Picture0000000000.png" alt="شركة الطيران 5" />
-                <img src="Picture0000000000000.png" alt="شركة الطيران 5" />
-                <img src="Picture0000000000000000.png" alt="شركة الطيران 5" />
-            </div>
-        </section>
+  </section>
 
-        <section id="places" style="padding: 60px 10%; background: #fff;">
-  <h2 style="text-align: center; color: #0077cc; font-size: 2rem; margin-bottom: 40px;">أماكن مميزة</h2><hr>
-       
-  <!-- أول مكان -->
-  <div style="text-align: center; margin-bottom: 60px;">
+  <section class="section logo-section" aria-label="شعارات شركات الطيران">
+    <h2>TRAVEL THE WORLD WITH US
+    </h2>
+    <div class="logos-container">
+      <img src="Picture0.png" alt="شركة الطيران 1" />
+      <img src="Picture00.png" alt="شركة الطيران 2" />
+      <img src="Picture000.png" alt="شركة الطيران 3" />
+      <img src="Picture mea.jpg" alt="شركة الطيران 4" />
+      <img src="Picture q.png" alt="شركة الطيران 5" />
+      <img src="Picture s.png" alt="شركة الطيران 5" />
+      <img src="Picture.png" alt="شركة الطيران 5" />
+      <img src="Picture0k.png" alt="شركة الطيران 5" />
+      <img src="PictureE.png" alt="شركة الطيران 5" />
+      <img src="Picture0000000000.png" alt="شركة الطيران 5" />
+      <img src="Picture0000000000000.png" alt="شركة الطيران 5" />
+      <img src="Picture0000000000000000.png" alt="شركة الطيران 5" />
+    </div>
+  </section>
+
+  <section id="places" style="padding: 60px 10%; background: #fff;">
+    <h2 style="text-align: center; color: #0077cc; font-size: 2rem; margin-bottom: 40px;">أماكن مميزة</h2>
+    <hr>
+
+    <!-- أول مكان -->
+    <div style="text-align: center; margin-bottom: 60px;">
       <h3 style="margin-bottom: 35px; color: #0077cc; font-size: 1.8rem; font-weight: bold;">مكان خاص 1</h3>
 
-    <img src="Picture130.jpg" alt="مكان 1" style="width: 300px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-  </div>
-
-  <!-- ثاني مكان -->
-  <div style="text-align: center; margin-bottom: 80px;">
-  <h3 style="margin-bottom: 35px; color: #0077cc; font-size: 1.8rem; font-weight: bold;">مكان خاص 2</h3>
-  
-  <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-    <img src="Picture230.png" alt="مكان 1" style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    
-    <img src="Picture210.png" alt="مكان 2" style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    
-    <img src="Picture220.png" alt="مكان 3" style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    
-    <img src="Picture200.png" alt="مكان 4" style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    
-  </div>
-</div>
-
-
-  <!-- ثالث مكان -->
-  <div style="text-align: center;">
-      <h3 style="margin-bottom: 35px; color: #0077cc; font-size: 1.8rem; font-weight: bold;">مكان خاص 3</h3>
-
-    <img src="Picture132.jpg" alt="صورة رئيسية" style="width: 60%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); margin-bottom: 20px;">
-    <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-      <img src="Picture9.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
-      <img src="Picture90.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
-      <img src="Picture91.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
-      <img src="Picture92.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
-      <img src="Picture93.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
+      <img src="Picture130.jpg" alt="مكان 1"
+        style="width: 300px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
     </div>
-  </div>
-</section>
 
+    <!-- ثاني مكان -->
+    <div style="text-align: center; margin-bottom: 80px;">
+      <h3 style="margin-bottom: 35px; color: #0077cc; font-size: 1.8rem; font-weight: bold;">مكان خاص 2</h3>
 
-<section style="padding: 60px 5%; background: #f4f8fb;">
-  <h2 style="text-align: center; color: #cc5200; font-size: 2rem; margin-bottom: 40px;">قسم الصور المتجاورة + صورة جانبية</h2>
+      <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+        <img src="Picture230.png" alt="مكان 1"
+          style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
 
-  <div style="display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 60px;">
+        <img src="Picture210.png" alt="مكان 2"
+          style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
 
-    <!-- الصور -->
-    <div style="flex: 1; min-width: 320px;">
-      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+        <img src="Picture220.png" alt="مكان 3"
+          style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
 
-        <!-- عنصر 1 -->
-        <div style="text-align: center;">
-          <div style="width: 100px; height: 100px;
-            background: url('me123.png') center/cover;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
-          </div>
-          <div style="margin-top: 10px; font-weight: bold;">السياحة الداخلية</div>
-        </div>
-
-        <!-- عنصر 2 -->
-        <div style="text-align: center;">
-          <div style="width: 100px; height: 100px;
-            background: url('Picture2m.png') center/cover;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
-          </div>
-          <div style="margin-top: 10px; font-weight: bold;">السياحة الخارجية</div>
-        </div>
-
-        <!-- عنصر 3 -->
-        <div style="text-align: center;">
-          <div style="width: 100px; height: 100px;
-            background: url('Picture12mm.png') center/cover;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
-          </div>
-          <div style="margin-top: 10px; font-weight: bold;">حجوزات الفنادق</div>
-        </div>
-
-        <!-- عنصر 4 -->
-        <div style="text-align: center;">
-          <div style="width: 100px; height: 100px;
-            background: url('Picture13mmmm.png') center/cover;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
-          </div>
-          <div style="margin-top: 10px; font-weight: bold;">تأشيرات السفر</div>
-        </div>
-
-        <!-- عنصر 5 -->
-        <div style="text-align: center;">
-          <div style="width: 100px; height: 100px;
-            background: url('Picture13mmmmmmmmmm.png') center/cover;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
-          </div>
-          <div style="margin-top: 10px; font-weight: bold;">الرحلات</div>
-        </div>
+        <img src="Picture200.png" alt="مكان 4"
+          style="width: 140px; height: 140px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
 
       </div>
     </div>
 
-    <!-- الصورة الجانبية -->
-    <div style="flex: 1; min-width: 280px; text-align: center;">
-      <img src="Picture12.jpg" alt="صورة جانبية"
-           style="width: 100%; max-width: 300px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.25);">
-      <p style="margin-top: 12px; font-size: 1.1rem; color: #003366;">رحلاتنا حول العالم</p>
+
+
+    <!-- ثالث مكان -->
+    <div style="text-align: center;">
+      <h3 style="margin-bottom: 35px; color: #0077cc; font-size: 1.8rem; font-weight: bold;">مكان خاص 3</h3>
+
+      <img src="Picture132.jpg" alt="صورة رئيسية"
+        style="width: 60%; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); margin-bottom: 20px;">
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <img src="Picture9.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
+        <img src="Picture90.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
+        <img src="Picture91.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
+        <img src="Picture92.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
+        <img src="Picture93.jpg" style="width: 120px; height: 80px; border-radius: 10px;">
+      </div>
     </div>
-
-  </div>
-</section>
+  </section>
 
 
+  <section style="padding: 60px 5%; background: #f4f8fb;">
+    <h2 style="text-align: center; color: #cc5200; font-size: 2rem; margin-bottom: 40px;">قسم الصور المتجاورة + صورة
+      جانبية</h2>
+
+    <div style="display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 60px;">
+
+      <!-- الصور -->
+      <div style="flex: 1; min-width: 320px;">
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+
+          <!-- عنصر 1 -->
+          <div style="text-align: center;">
+            <div style="width: 100px; height: 100px;
+            background: url('me123.png') center/cover;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
+            </div>
+            <div style="margin-top: 10px; font-weight: bold;">السياحة الداخلية</div>
+          </div>
+
+          <!-- عنصر 2 -->
+          <div style="text-align: center;">
+            <div style="width: 100px; height: 100px;
+            background: url('Picture2m.png') center/cover;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
+            </div>
+            <div style="margin-top: 10px; font-weight: bold;">السياحة الخارجية</div>
+          </div>
+
+          <!-- عنصر 3 -->
+          <div style="text-align: center;">
+            <div style="width: 100px; height: 100px;
+            background: url('Picture12mm.png') center/cover;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
+            </div>
+            <div style="margin-top: 10px; font-weight: bold;">حجوزات الفنادق</div>
+          </div>
+
+          <!-- عنصر 4 -->
+          <div style="text-align: center;">
+            <div style="width: 100px; height: 100px;
+            background: url('Picture13mmmm.png') center/cover;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
+            </div>
+            <div style="margin-top: 10px; font-weight: bold;">تأشيرات السفر</div>
+          </div>
+
+          <!-- عنصر 5 -->
+          <div style="text-align: center;">
+            <div style="width: 100px; height: 100px;
+            background: url('Picture13mmmmmmmmmm.png') center/cover;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin: auto;">
+            </div>
+            <div style="margin-top: 10px; font-weight: bold;">الرحلات</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- الصورة الجانبية -->
+      <div style="flex: 1; min-width: 280px; text-align: center;">
+        <img src="Picture12.jpg" alt="صورة جانبية"
+          style="width: 100%; max-width: 300px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.25);">
+        <p style="margin-top: 12px; font-size: 1.1rem; color: #003366;">رحلاتنا حول العالم</p>
+      </div>
+
+    </div>
+  </section>
 
 
 
-<section id="features" style="padding: 60px 10%; background: #fff;">
-  <h2 style="text-align: center; color: #0077cc; font-size: 2rem; margin-bottom: 40px;">مميزاتنا الذكية</h2>
 
-  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;">
 
-    <!-- الصورة الخلفية -->
-    <div style="
-      flex: 1;
+  <section id="features" style="padding: 60px 10%; background: #fff;">
+    <h2 style="text-align: center; color: #0077cc; font-size: 2rem; margin-bottom: 40px;">مميزاتنا الذكية</h2>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;">
+
+      <!-- الصورة الخلفية -->
+      <div style="flex: 1;
       min-height: 600px;
       background: url('Picture30.jpg') center/cover no-repeat;
       border-radius: 20px;
       box-shadow: 0 10px 20px rgb(236, 9, 9);
       min-width: 280px;
       height: 100%;
-      width: 100%;
-    ">
+      width: 100%;">
+      </div>
+
+      <!-- الشريط الجانبي (دواير + نص بجانبها) -->
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 25px; justify-content: center;">
+
+        <!-- ميزة 1 -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <img src="Picture nu.png"
+            style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+          <div style="background: #0077cc; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold;">
+            ميزة 1
+          </div>
+        </div>
+
+        <!-- ميزة 2 -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <img src="Picture888.png"
+            style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+          <div style="background: #0077cc; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold;">
+            ميزة 2
+          </div>
+        </div>
+
+        <!-- ميزة 3 -->
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <img src="Picture88.png"
+            style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+          <div style="background: #0077cc; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold;">
+            ميزة 3
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <footer
+    style="background:#0077cc; color:#fff; padding: 40px 10%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; font-size:1rem;">
+
+
+    <div style="flex: 1; min-width: 100px;">
+      <img src="Picture14.jpg" alt="صورة الفوتر"
+        style="max-width: 350px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    </div>
+    <div style="flex: 1; min-width: 280px;  align-text:center; ">
+      <h3 style="margin-bottom: 15px; font-size:3rem; ">Let’s CONNECT</h3>
+
+
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        4 Khadrawi Street, off Mahmoud Bassiouni street, in front of Abdel Moneim Riad Square – Al Tahrir
+      </p>
+
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        69 Camp Shizar rotation - Port Said Street - Alexandria
+      </p>
+
+      <p>
+        <i class="fas fa-phone-alt"></i>
+        01008748547 - 01229355586
+      </p>
+
+      <p>
+        <i class="fas fa-phone-alt"></i>
+        01117665953 - 01103659033 - 01103659037
+      </p>
+
+      <p>
+        <i class="fas fa-phone-alt"></i>
+        02-25742014 _ 02-25792691
+      </p>
+
+      <p>
+        <i class="fas fa-envelope"></i>
+        Sonesta@sonestatours.com
+      </p>
+
+      <p>
+        <i class="fas fa-envelope"></i>
+        Info@sonestatours.com
+      </p>
     </div>
 
-    <!-- الشريط الجانبي (دواير + نص بجانبها) -->
-    <div style="flex: 1; display: flex; flex-direction: column; gap: 25px; justify-content: center;">
-
-      <!-- ميزة 1 -->
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="Picture nu.png" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <div style="background: #0077cc; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold;">
-          ميزة 1
-        </div>
-      </div>
-
-      <!-- ميزة 2 -->
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="Picture888.png" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <div style="background: #0077cc; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold;">
-          ميزة 2
-        </div>
-      </div>
-
-      <!-- ميزة 3 -->
-      <div style="display: flex; align-items: center; gap: 15px;">
-        <img src="Picture88.png" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <div style="background: #0077cc; color: white; padding: 10px 20px; border-radius: 30px; font-weight: bold;">
-          ميزة 3
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </footer>
 
 
+</body>
 
-
-        <footer
-            style="background:#0077cc; color:#fff; padding: 40px 10%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; font-size:1rem;">
-
-
-            <div style="flex: 1; min-width: 100px;">
-                <img src="Picture14.jpg" alt="صورة الفوتر"
-                    style="max-width: 350px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-            </div>
-            <div style="flex: 1; min-width: 280px;  align-text:center; ">
-                <h3 style="margin-bottom: 15px; font-size:3rem; ">Let’s CONNECT</h3>
-                
-                    
-                <p>
-                    <i class="fas fa-map-marker-alt"></i>
-                    4 Khadrawi Street, off Mahmoud Bassiouni street, in front of Abdel Moneim Riad Square – Al Tahrir
-                </p>
-                
-                <p>
-                    <i class="fas fa-map-marker-alt"></i>
-                    69 Camp Shizar rotation - Port Said Street - Alexandria
-                </p>
-                
-                <p>
-                    <i class="fas fa-phone-alt"></i>
-                    01008748547 - 01229355586
-                </p>
-                
-                <p>
-                    <i class="fas fa-phone-alt"></i>
-                    01117665953 - 01103659033 - 01103659037
-                </p>
-                
-                <p>
-                    <i class="fas fa-phone-alt"></i>
-                    02-25742014 _ 02-25792691
-                </p>
-                
-                <p>
-                    <i class="fas fa-envelope"></i>
-                    Sonesta@sonestatours.com
-                </p>
-                
-                <p>
-                    <i class="fas fa-envelope"></i>
-                    Info@sonestatours.com   
-                 </p>
-            </div>
-            
-        </footer>
-
-
-    </body>
- </html>
-
-          
-          
-          
-          
-          
-          
-          
-          
-          
+</html>
